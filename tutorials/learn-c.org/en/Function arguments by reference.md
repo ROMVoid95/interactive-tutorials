@@ -1,12 +1,14 @@
 Tutorial
 --------
 
-Function arguments are passed by value, which means they are copied in and out of functions. But what if we copied pointers to values instead of the values themselves? This will enable us to give functions control over variables and structures of the parent functions, and not just a copy of them. 
+Assumingly you're already know pointers and functions, so you are aware of that function arguments are passed by value, which means they are copied in and out of functions.
+But what if we pass pointers to values instead of the values themselves? This will enable us to give functions control over variables and structures of the parent functions, and not just a copy of them, thus directly reading and writing the original object.
 
 Let's say we want to write a function which increments a number by one, called `addone`. This will not work:
 
     void addone(int n) {
-        n++;
+        // n is local variable which only exists within the function scope
+        n++; // therefore incrementing it has no effect
     }
 
     int n;
@@ -16,8 +18,9 @@ Let's say we want to write a function which increments a number by one, called `
 
 However, this will work:
 
-    void addone(int * n) {
-        (*n)++;
+    void addone(int *n) {
+        // n is a pointer here which point to a memory-adress outside the function scope
+        (*n)++; // this will effectively increment the value of n
     }
 
     int n;
@@ -97,7 +100,8 @@ Solution
     void birthday(person * p);
 
     void birthday(person * p){
-        (*p).age += 1;
+        p->age++; // This is the same..	
+        //(*p).age++; // ... as this would be
     }
 
     int main() {

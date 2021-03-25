@@ -1,55 +1,91 @@
 Tutorial
 --------
 
-Objetos son encapsulamientos de variables y funciones en una entrada única. Objetos que obtienen sus variables y funciones desde las clases. Clases son esencialmente una plantilla para crear tus objetos.
+Los objetos son encapsulamientos de variables y funciones en una entrada única. Los objetos obtienen sus variables y funciones desde las clases; las clases son esencialmente una plantilla para crear tus objetos.
 
 Una clase muy básica se verá como esto:
 
      class MyClass:
           variable = "blah"
-
           def function(self):
-               print "This is a message inside the class."
+               print "Este mensaje está dentro de una clase."
 
-Explicaremos por que debes incluir el "self" como parametro un poco mas adelante.  Primero, para asignar la clase (template) a un objeto debes hacer lo siguiente:
+Explicaremos el por qué debes de incluir el "self" como parametro más adelante; primero, para asignar la clase previa (plantilla) a un objeto debes hacer lo siguiente:
 
+     class MyClass:
+          variable = "blah"
+          def function(self):
+               print "Este mensaje está dentro de una clase."
+               
      myobjectx = MyClass()
 
-Ahora que la variable "myobjectx" sostiene un objeto de una clase "MyClass" que contiene la variable y que la función definida dentro de la clase llamada "MyClass".
+Ahora que la variable "myobjectx" contiene un objeto de la clase "MyClass" que contiene la variable y la función definida dentro de la clase llamada "MyClass".
 
 ### Accediendo a objetos de variables
 
-Para acceder dentro de la variable del objeto recién creado "MyObject" harás lo siguiente:
+Para acceder dentro de la variable del objeto recién creado "myObjectx" se escribe lo siguiente:
+
+     class MyClass:
+          variable = "blah"
+          def function(self):
+               print "Este mensaje está dentro de una clase."
+               
+     myobjectx = MyClass()
 
      myobjectx.variable
 
-Así que por ejemplo deberá mandar la variable "blah":
+El siguiente código de ejemplo imprime la variable "blah":
 
-     print myobjectx.variable
 
-Puedes crear múltiples objetos diferentes que pertenezcan a la misma clase (tengan las mismas variables y funciones previamente definidas). Sin embargo, cada objeto contiene copias independientes de las variables definidas en las clases. Por ejemplo, si fuéramos a definir otro objeto como "MyClass" y después cambiar la cadena en la variable previa:
+     class MyClass:
+          variable = "blah"
+          def function(self):
+               print "Este mensaje está dentro de una clase."
+               
+     myobjectx = MyClass()
+
+     print(myobjectx.variable)
+
+Puedes crear múltiples objetos diferentes que pertenezcan a la misma clase (tengan las mismas variables y funciones ya definidas). Sin embargo, cada objeto contiene copias independientes de las variables definidas en las clases. Por ejemplo, si definimos otro objeto con la clase "MyClass" y después cambiamos la cadena de texto que tenía la variable anterior:
+
+
+     class MyClass:
+          variable = "blah"
+          def function(self):
+               print("Este mensaje está dentro de una clase.")
+
+     myobjectx = MyClass()
+     myobjecty = MyClass()
+
+     myobjecty.variable = "yackity"
+
+     # Entonces se imprimen ambos valores
+     print(myobjectx.variable) # imprime "blah"
+     print(myobjecty.variable) # imprime "yackity"
 
      myobjecty = MyClass()
      myobjecty.variable = "yackity"
 
-Entonces saca ambos valores:
-     
-     print myobjectx.variable   # Esto mostrará "blah".
-     print myobjecty.variable   # Esto mostrará "yackity".
 
 ### Accediendo a objetos de función
 
-Para acceder una función dentro del objeto para usar una notación similar a acceder una variable:
+Para acceder a una función dentro del objeto para usar una notación similar a acceder una variable:
+
+     class MyClass:
+          variable = "blah"
+          def function(self):
+               print("Este mensaje está dentro de una clase.")
+
+     myobjectx = MyClass()
 
      myobjectx.function()
 
-La instrucción previa mostrará un mensaje, "Este mensaje esta dentro de una clase."
-
-
+La instrucción previa mostrará un mensaje "Este mensaje está dentro de una clase".
 
 ### Ejercicio
 
-Tenemos una clase definida para vehículo. Crea dos nuevos vehículos llamados MiCarro1 y MiCarro2. Fija MiCarro1 para ser un convertible rojo con valor de $60,000, con nombre de Fer, y MiCarro2 para ser una van azul en $10,000, con nombre de Jump.
+Tenemos una clase definida para un vehículo. Crea dos nuevos vehículos llamados MiCarro1 y MiCarro2.
+Fija MiCarro1 para ser un convertible rojo con valor de $60,000, con el nombre "Fer", y MiCarro2 para ser una van azul en $10,000, con el nombre "Jump".
 
 Tutorial Code
 -------------
@@ -66,8 +102,8 @@ class Vehicle:
 #your code goes here
 
 #checking code
-print MiCarro1.description()
-print MiCarro2.description()
+print(MiCarro1.description())
+print(MiCarro2.description())
 
 Expected Output
 ---------------
@@ -99,5 +135,5 @@ MiCarro2.value=10000
 MiCarro2.name="Jump"
 
 #checking code
-print MiCarro1.description()
-print MiCarro2.description()
+print(MiCarro1.description())
+print(MiCarro2.description())

@@ -7,14 +7,12 @@ C++ provides a rich set of built-in as well as user defined data types. Followin
 
 #### Built-in
 * Boolean - `boolean` - either `true` or `false`
-* Integers - whole numbers which can be both positive and negative. Defined using `char`, `int`.
+* Characters - alphabets and all the symbols. Defined using `char`.
+* Integers - whole numbers which can be both positive and negative. Defined using `int` (4 bytes) or `short int` (2 bytes) or `long int` (8 bytes) based on the size of the numbers used.
 * Floating point numbers - real numbers (numbers with fractions). Defined using `float` and `double`.
 * Valueless	 using the `void` keyword
 * Wide character using the `wchar_t` keyword
 
-The different types of variables define their bounds. A `char` can range only from -128 to 127, 
-whereas a `long` can range from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807. This is because a `char`
-is represented using only 8 bits of information whereas `long` uses 64 bits of information.
 
 #### Type Modifiers
 
@@ -38,8 +36,8 @@ Typedefs allow for creating new names (think of them as aliases) for existing ty
 
 To create an enumeration requires the use of the keyword enum. The general form of an enumeration type is:
 
-    enum enum-name { list of names } var-list;
-Above, the enum-name is the enumeration's type name. The list of names is comma separated.
+    enum enum_name { list of names } var_list;
+Above, the enum_name is the enumeration's type name. The list of names is comma separated.
 
 For example, the following code defines an enumeration of colors called colors and the variable `a_colour` of type color. Finally, `a_colour` is assigned the value "green".
 
@@ -84,7 +82,7 @@ Tutorial Code
 
       /* Your code goes here */
 
-      cout << "The sum of a, b, and c is" << sum << endl;
+      cout << "The sum of a, b, and c is " << sum << endl;
       return 0;
     }
 

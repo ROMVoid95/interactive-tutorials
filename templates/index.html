@@ -38,6 +38,10 @@
                 </script>
             </div>
 
+{#            <div class="mb-3">#}
+{#                <a href="https://chrome.google.com/webstore/detail/technews/babfhcgjchdmjknpmbdpcfggaonhimlj" target="_blank"><img src="/static/img/banners/technews-banner-wide.png" style="width: 100%"/></a>#}
+{#            </div>#}
+
             {% if page_title %}
                 <ul class="breadcrumb" style="margin-top: 10px">
                     {% if back_chapter %}
@@ -111,18 +115,11 @@
 
         <div class="col-2 d-none d-lg-block mt-2">
             <div id="google-ad-right">
-                <h4>Chapters</h4>
+                <h4>Sponsors</h4>
                 <hr/>
-                <div class="mt-2">
-                    {% for link, link_href in site_tutorial_links %}
-                        <div>
-                            <a href="{{ link_href }}">{{ link }}</a>
-                        </div>
-                    {% endfor %}
-                </div>
-
-                <h4 class="mt-3">Sponsors</h4>
-                <hr/>
+{#                <div class="mt-3">#}
+{#                    <a href="http://onelink.to/5tw9ex"><img src="/static/img/banners/typetap-banner.png" target="_blank"></a>#}
+{#                </div>#}
                 <div class="mt-3">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Interactive Tutorials Right -->
@@ -136,13 +133,22 @@
                 </div>
                 <div class="mt-3">
                     <a href="https://digitalocean.com/" target="_blank" >
-                        <img src="/static/img/banners/digital-ocean.png" style="width: 160px" alt="Digital Ocean">
+                        <img src="/static/img/banners/digital-ocean.svg" style="width: 160px" alt="Digital Ocean">
                     </a>
                 </div>
                 <div class="mt-3">
                     <a href="http://www.spoj.com/?utm_campaign=permanent&utm_medium=banner&utm_source=learnx" target="_blank">
                         <img src="/static/img/logos/spoj.png" style="width: 160px" alt="Sphere Engine">
                     </a>
+                </div>
+                <h4 class="mt-3">Chapters</h4>
+                <hr/>
+                <div class="mt-2">
+                    {% for link, link_href in site_tutorial_links %}
+                        <div>
+                            <a href="{{ link_href }}">{{ link }}</a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -185,7 +191,7 @@
 
                     <div class="row footer-toggle">
                         <div class="col">
-                            <textarea id="code">{{ code.decode('utf8') }}</textarea>
+                            <textarea id="code">{{ code }}</textarea>
                         </div>
                     </div>
 
